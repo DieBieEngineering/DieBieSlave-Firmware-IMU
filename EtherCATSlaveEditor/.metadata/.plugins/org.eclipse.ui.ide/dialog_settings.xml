@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="installedFeatures">
+		<item value="com.rtlabs.ecat.slaveeditor:0.1.0.201507011345"/>
+		<item value="org.eclipse.emf.common.ui:2.7.0.v20130125-0826"/>
+		<item value="org.eclipse.emf.common:2.8.0.v20130125-0546"/>
+		<item value="org.eclipse.emf.databinding.edit:1.2.1.v20130125-0826"/>
+		<item value="org.eclipse.emf.databinding:1.2.0.v20130125-0826"/>
+		<item value="org.eclipse.emf.ecore:2.8.3.v20130125-0546"/>
+		<item value="org.eclipse.emf.edit.ui:2.8.0.v20130125-0826"/>
+		<item value="org.eclipse.emf.edit:2.8.0.v20130125-0826"/>
+		<item value="org.eclipse.help:1.4.1.v20120912-145617-8R7xFOXFLWUl7PpMEeZNIGkb4"/>
+		<item value="org.eclipse.platform:3.8.1.v20130118-180812-9jF7oIBFG8eU2pim-VbIlTuQjY0RWWK3x-bv4I"/>
+		<item value="org.eclipse.rcp:3.8.2.v20130118-180157-96BuGOZFxwOAeG8Ofmqicz0tPK"/>
+	</list>
+</section>

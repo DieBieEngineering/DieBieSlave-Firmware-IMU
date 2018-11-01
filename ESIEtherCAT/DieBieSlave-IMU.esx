@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Slave id="DieBieSlave - IMU" productCode="0x01001202">
+  <Name>DieBieSlave - IMU</Name>
+  <Vendor>
+    <Id>0x959</Id>
+    <Name>DieBie Engineering</Name>
+  </Vendor>
+  <Group>
+    <Type>DieBie Slaves</Type>
+    <Name>Sensors</Name>
+  </Group>
+  <Fmmu>Outputs</Fmmu>
+  <Fmmu>Inputs</Fmmu>
+  <Fmmu>MBoxState</Fmmu>
+  <Sm ControlByte="0x26" DefaultSize="128" StartAddress="0x1000">MBoxOut</Sm>
+  <Sm ControlByte="0x22" DefaultSize="128" StartAddress="0x1080">MBoxIn</Sm>
+  <Sm ControlByte="0x24" DefaultSize="0" StartAddress="0x1100">Outputs</Sm>
+  <Sm ControlByte="0x20" DefaultSize="0" StartAddress="0x1180">Inputs</Sm>
+  <Mailbox CoE="true">
+    <Bootstrap Length="128" Start="0x1000"/>
+    <Standard Length="128" Start="0x1000"/>
+  </Mailbox>
+  <Eeprom>
+    <ByteSize>2048</ByteSize>
+  </Eeprom>
+  <Dictionary>
+    <Item>
+      <Name>Device Type</Name>
+      <Index>0x1000</Index>
+      <DataType>UNSIGNED32</DataType>
+      <DefaultValue>0x01901389</DefaultValue>
+    </Item>
+    <Item>
+      <Name>Device Name</Name>
+      <Index>0x1008</Index>
+      <DataType>VISIBLE_STRING</DataType>
+      <DefaultValue>slave</DefaultValue>
+    </Item>
+    <Item>
+      <Name>Hardware Version</Name>
+      <Index>0x1009</Index>
+      <DataType>VISIBLE_STRING</DataType>
+      <DefaultValue>1.0</DefaultValue>
+    </Item>
+    <Item>
+      <Name>Software Version</Name>
+      <Index>0x100A</Index>
+      <DataType>VISIBLE_STRING</DataType>
+      <DefaultValue>1.0</DefaultValue>
+    </Item>
+    <Item Managed="true">
+      <Name>Identity Object</Name>
+      <Index>0x1018</Index>
+      <DataType>RECORD</DataType>
+      <SubItem>
+        <Name>Number of Elements</Name>
+        <DataType>UNSIGNED8</DataType>
+        <DefaultValue>4</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>Vendor ID</Name>
+        <DataType>UNSIGNED32</DataType>
+        <DefaultValue>0x959</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>Product Code</Name>
+        <DataType>UNSIGNED32</DataType>
+        <DefaultValue>0x01001202</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>Revision Number</Name>
+        <DataType>UNSIGNED32</DataType>
+        <DefaultValue>0</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>Serial Number</Name>
+        <DataType>UNSIGNED32</DataType>
+        <DefaultValue>0x00000000</DefaultValue>
+      </SubItem>
+    </Item>
+    <Item Managed="true">
+      <Name>Digital ouputs</Name>
+      <Index>0x1600</Index>
+      <DataType>RECORD</DataType>
+      <SubItem>
+        <Name>Number of Elements</Name>
+        <DataType>UNSIGNED8</DataType>
+        <DefaultValue>2</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>LED0</Name>
+        <DataType>UNSIGNED32</DataType>
+        <DefaultValue>0x70000101</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>Padding</Name>
+        <DataType>UNSIGNED32</DataType>
+        <DefaultValue>0x00000007</DefaultValue>
+      </SubItem>
+    </Item>
+    <Item Managed="true">
+      <Name>IMU0</Name>
+      <Index>0x1A00</Index>
+      <DataType>RECORD</DataType>
+      <SubItem>
+        <Name>Number of Elements</Name>
+        <DataType>UNSIGNED8</DataType>
+        <DefaultValue>8</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>AccelerometerX</Name>
+        <DataType>UNSIGNED32</DataType>
+        <DefaultValue>0x60000120</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>AccelerometerY</Name>
+        <DataType>UNSIGNED32</DataType>
+        <DefaultValue>0x60000220</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>AccelerometerZ</Name>
+        <DataType>UNSIGNED32</DataType>
+        <DefaultValue>0x60000320</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>GyroscopeX</Name>
+        <DataType>UNSIGNED32</DataType>
+        <DefaultValue>0x60000420</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>GyroscopeY</Name>
+        <DataType>UNSIGNED32</DataType>
+        <DefaultValue>0x60000520</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>GyroscopeZ</Name>
+        <DataType>UNSIGNED32</DataType>
+        <DefaultValue>0x60000620</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>SensorPresent</Name>
+        <DataType>UNSIGNED32</DataType>
+        <DefaultValue>0x60000701</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>Padding</Name>
+        <DataType>UNSIGNED32</DataType>
+        <DefaultValue>0x00000007</DefaultValue>
+      </SubItem>
+    </Item>
+    <Item Managed="true">
+      <Name>IMU1</Name>
+      <Index>0x1A01</Index>
+      <DataType>RECORD</DataType>
+      <SubItem>
+        <Name>Number of Elements</Name>
+        <DataType>UNSIGNED8</DataType>
+        <DefaultValue>8</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>AccelerometerX</Name>
+        <DataType>UNSIGNED32</DataType>
+        <DefaultValue>0x60010120</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>AccelerometerY</Name>
+        <DataType>UNSIGNED32</DataType>
+        <DefaultValue>0x60010220</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>AccelerometerZ</Name>
+        <DataType>UNSIGNED32</DataType>
+        <DefaultValue>0x60010320</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>GyroscopeX</Name>
+        <DataType>UNSIGNED32</DataType>
+        <DefaultValue>0x60010420</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>GyroscopeY</Name>
+        <DataType>UNSIGNED32</DataType>
+        <DefaultValue>0x60010520</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>GyroscopeZ</Name>
+        <DataType>UNSIGNED32</DataType>
+        <DefaultValue>0x60010620</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>SensorPresent</Name>
+        <DataType>UNSIGNED32</DataType>
+        <DefaultValue>0x60010701</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>Padding</Name>
+        <DataType>UNSIGNED32</DataType>
+        <DefaultValue>0x00000007</DefaultValue>
+      </SubItem>
+    </Item>
+    <Item Managed="true">
+      <Name>Sync Manager Communication Type</Name>
+      <Index>0x1C00</Index>
+      <DataType>ARRAY</DataType>
+      <SubItem>
+        <Name>Number of Elements</Name>
+        <DataType>UNSIGNED8</DataType>
+        <DefaultValue>4</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>Communications Type SM0</Name>
+        <DataType>UNSIGNED8</DataType>
+        <DefaultValue>1</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>Communications Type SM1</Name>
+        <DataType>UNSIGNED8</DataType>
+        <DefaultValue>2</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>Communications Type SM2</Name>
+        <DataType>UNSIGNED8</DataType>
+        <DefaultValue>3</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>Communications Type SM3</Name>
+        <DataType>UNSIGNED8</DataType>
+        <DefaultValue>4</DefaultValue>
+      </SubItem>
+    </Item>
+    <Item Managed="true">
+      <Name>Sync Manager 2 PDO Assignment</Name>
+      <Index>0x1C12</Index>
+      <DataType>ARRAY</DataType>
+      <SubItem>
+        <Name>Number of Elements</Name>
+        <DataType>UNSIGNED8</DataType>
+        <DefaultValue>1</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>PDO Mapping</Name>
+        <DataType>UNSIGNED16</DataType>
+        <DefaultValue>0x1600</DefaultValue>
+      </SubItem>
+    </Item>
+    <Item Managed="true">
+      <Name>Sync Manager 3 PDO Assignment</Name>
+      <Index>0x1C13</Index>
+      <DataType>ARRAY</DataType>
+      <SubItem>
+        <Name>Number of Elements</Name>
+        <DataType>UNSIGNED8</DataType>
+        <DefaultValue>2</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>PDO Mapping</Name>
+        <DataType>UNSIGNED16</DataType>
+        <DefaultValue>0x1A00</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>PDO Mapping</Name>
+        <DataType>UNSIGNED16</DataType>
+        <DefaultValue>0x1A01</DefaultValue>
+      </SubItem>
+    </Item>
+    <Item Managed="true">
+      <Name>IMU0</Name>
+      <Index>0x6000</Index>
+      <DataType>RECORD</DataType>
+      <Variable>IMU0</Variable>
+      <VariableType>Input</VariableType>
+      <SubItem>
+        <Name>Number of Elements</Name>
+        <DataType>UNSIGNED8</DataType>
+        <DefaultValue>7</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>AccelerometerX</Name>
+        <DataType>REAL32</DataType>
+        <DefaultValue>0</DefaultValue>
+        <Access>RO</Access>
+        <Variable>AccelerometerX</Variable>
+        <VariableType>Input</VariableType>
+      </SubItem>
+      <SubItem>
+        <Name>AccelerometerY</Name>
+        <DataType>REAL32</DataType>
+        <DefaultValue>0</DefaultValue>
+        <Access>RO</Access>
+        <Variable>AccelerometerY</Variable>
+        <VariableType>Input</VariableType>
+      </SubItem>
+      <SubItem>
+        <Name>AccelerometerZ</Name>
+        <DataType>REAL32</DataType>
+        <DefaultValue>0</DefaultValue>
+        <Access>RO</Access>
+        <Variable>AccelerometerZ</Variable>
+        <VariableType>Input</VariableType>
+      </SubItem>
+      <SubItem>
+        <Name>GyroscopeX</Name>
+        <DataType>REAL32</DataType>
+        <DefaultValue>0</DefaultValue>
+        <Access>RO</Access>
+        <Variable>GyroscopeX</Variable>
+        <VariableType>Input</VariableType>
+      </SubItem>
+      <SubItem>
+        <Name>GyroscopeY</Name>
+        <DataType>REAL32</DataType>
+        <DefaultValue>0</DefaultValue>
+        <Access>RO</Access>
+        <Variable>GyroscopeY</Variable>
+        <VariableType>Input</VariableType>
+      </SubItem>
+      <SubItem>
+        <Name>GyroscopeZ</Name>
+        <DataType>REAL32</DataType>
+        <DefaultValue>0</DefaultValue>
+        <Access>RO</Access>
+        <Variable>GyroscopeZ</Variable>
+        <VariableType>Input</VariableType>
+      </SubItem>
+      <SubItem>
+        <Name>SensorPresent</Name>
+        <DataType>BOOLEAN</DataType>
+        <DefaultValue>0</DefaultValue>
+        <Access>RO</Access>
+        <Variable>SensorPresent</Variable>
+        <VariableType>Input</VariableType>
+      </SubItem>
+    </Item>
+    <Item Managed="true">
+      <Name>IMU1</Name>
+      <Index>0x6001</Index>
+      <DataType>RECORD</DataType>
+      <Variable>IMU1</Variable>
+      <VariableType>Input</VariableType>
+      <SubItem>
+        <Name>Number of Elements</Name>
+        <DataType>UNSIGNED8</DataType>
+        <DefaultValue>7</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>AccelerometerX</Name>
+        <DataType>REAL32</DataType>
+        <DefaultValue>0</DefaultValue>
+        <Access>RO</Access>
+        <Variable>AccelerometerX</Variable>
+        <VariableType>Input</VariableType>
+      </SubItem>
+      <SubItem>
+        <Name>AccelerometerY</Name>
+        <DataType>REAL32</DataType>
+        <DefaultValue>0</DefaultValue>
+        <Access>RO</Access>
+        <Variable>AccelerometerY</Variable>
+        <VariableType>Input</VariableType>
+      </SubItem>
+      <SubItem>
+        <Name>AccelerometerZ</Name>
+        <DataType>REAL32</DataType>
+        <DefaultValue>0</DefaultValue>
+        <Access>RO</Access>
+        <Variable>AccelerometerZ</Variable>
+        <VariableType>Input</VariableType>
+      </SubItem>
+      <SubItem>
+        <Name>GyroscopeX</Name>
+        <DataType>REAL32</DataType>
+        <DefaultValue>0</DefaultValue>
+        <Access>RO</Access>
+        <Variable>GyroscopeX</Variable>
+        <VariableType>Input</VariableType>
+      </SubItem>
+      <SubItem>
+        <Name>GyroscopeY</Name>
+        <DataType>REAL32</DataType>
+        <DefaultValue>0</DefaultValue>
+        <Access>RO</Access>
+        <Variable>GyroscopeY</Variable>
+        <VariableType>Input</VariableType>
+      </SubItem>
+      <SubItem>
+        <Name>GyroscopeZ</Name>
+        <DataType>REAL32</DataType>
+        <DefaultValue>0</DefaultValue>
+        <Access>RO</Access>
+        <Variable>GyroscopeZ</Variable>
+        <VariableType>Input</VariableType>
+      </SubItem>
+      <SubItem>
+        <Name>SensorPresent</Name>
+        <DataType>BOOLEAN</DataType>
+        <DefaultValue>0</DefaultValue>
+        <Access>RO</Access>
+        <Variable>SensorPresent</Variable>
+        <VariableType>Input</VariableType>
+      </SubItem>
+    </Item>
+    <Item Managed="true">
+      <Name>Digital ouputs</Name>
+      <Index>0x7000</Index>
+      <DataType>RECORD</DataType>
+      <Variable>Digital ouputs</Variable>
+      <VariableType>Output</VariableType>
+      <SubItem>
+        <Name>Number of Elements</Name>
+        <DataType>UNSIGNED8</DataType>
+        <DefaultValue>1</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>LED0</Name>
+        <DataType>BOOLEAN</DataType>
+        <DefaultValue>0</DefaultValue>
+        <Access>RO</Access>
+        <Variable>LED0</Variable>
+        <VariableType>Output</VariableType>
+      </SubItem>
+    </Item>
+    <Item Managed="true">
+      <Name>Sensitivity</Name>
+      <Index>0x8000</Index>
+      <DataType>RECORD</DataType>
+      <Variable>Sensitivity</Variable>
+      <VariableType>Parameter</VariableType>
+      <SubItem>
+        <Name>Number of Elements</Name>
+        <DataType>UNSIGNED8</DataType>
+        <DefaultValue>2</DefaultValue>
+      </SubItem>
+      <SubItem>
+        <Name>Accelerometer</Name>
+        <DataType>INTEGER8</DataType>
+        <DefaultValue>0</DefaultValue>
+        <Access>RW</Access>
+        <Variable>Accelerometer</Variable>
+        <VariableType>Parameter</VariableType>
+      </SubItem>
+      <SubItem>
+        <Name>Gyroscope</Name>
+        <DataType>INTEGER8</DataType>
+        <DefaultValue>0</DefaultValue>
+        <Access>RW</Access>
+        <Variable>Gyroscope</Variable>
+        <VariableType>Parameter</VariableType>
+      </SubItem>
+    </Item>
+  </Dictionary>
+  <RxPdo>
+    <Index>0x1600</Index>
+    <Container>Digital ouputs</Container>
+    <Name>Digital ouputs</Name>
+    <Entry>
+      <Index>0x7000</Index>
+      <SubIndex>1</SubIndex>
+      <Variable>LED0</Variable>
+    </Entry>
+    <Entry padBits="7"/>
+  </RxPdo>
+  <TxPdo>
+    <Index>0x1A00</Index>
+    <Container>IMU0</Container>
+    <Name>IMU0</Name>
+    <Entry>
+      <Index>0x6000</Index>
+      <SubIndex>1</SubIndex>
+      <Variable>AccelerometerX</Variable>
+    </Entry>
+    <Entry>
+      <Index>0x6000</Index>
+      <SubIndex>2</SubIndex>
+      <Variable>AccelerometerY</Variable>
+    </Entry>
+    <Entry>
+      <Index>0x6000</Index>
+      <SubIndex>3</SubIndex>
+      <Variable>AccelerometerZ</Variable>
+    </Entry>
+    <Entry>
+      <Index>0x6000</Index>
+      <SubIndex>4</SubIndex>
+      <Variable>GyroscopeX</Variable>
+    </Entry>
+    <Entry>
+      <Index>0x6000</Index>
+      <SubIndex>5</SubIndex>
+      <Variable>GyroscopeY</Variable>
+    </Entry>
+    <Entry>
+      <Index>0x6000</Index>
+      <SubIndex>6</SubIndex>
+      <Variable>GyroscopeZ</Variable>
+    </Entry>
+    <Entry>
+      <Index>0x6000</Index>
+      <SubIndex>7</SubIndex>
+      <Variable>SensorPresent</Variable>
+    </Entry>
+    <Entry padBits="7"/>
+  </TxPdo>
+  <TxPdo>
+    <Index>0x1A01</Index>
+    <Container>IMU1</Container>
+    <Name>IMU1</Name>
+    <Entry>
+      <Index>0x6001</Index>
+      <SubIndex>1</SubIndex>
+      <Variable>AccelerometerX</Variable>
+    </Entry>
+    <Entry>
+      <Index>0x6001</Index>
+      <SubIndex>2</SubIndex>
+      <Variable>AccelerometerY</Variable>
+    </Entry>
+    <Entry>
+      <Index>0x6001</Index>
+      <SubIndex>3</SubIndex>
+      <Variable>AccelerometerZ</Variable>
+    </Entry>
+    <Entry>
+      <Index>0x6001</Index>
+      <SubIndex>4</SubIndex>
+      <Variable>GyroscopeX</Variable>
+    </Entry>
+    <Entry>
+      <Index>0x6001</Index>
+      <SubIndex>5</SubIndex>
+      <Variable>GyroscopeY</Variable>
+    </Entry>
+    <Entry>
+      <Index>0x6001</Index>
+      <SubIndex>6</SubIndex>
+      <Variable>GyroscopeZ</Variable>
+    </Entry>
+    <Entry>
+      <Index>0x6001</Index>
+      <SubIndex>7</SubIndex>
+      <Variable>SensorPresent</Variable>
+    </Entry>
+    <Entry padBits="7"/>
+  </TxPdo>
+  <Input>
+    <Name>IMU0</Name>
+    <Type>RECORD</Type>
+    <Member>
+      <Name>AccelerometerX</Name>
+      <Type>REAL32</Type>
+    </Member>
+    <Member>
+      <Name>AccelerometerY</Name>
+      <Type>REAL32</Type>
+    </Member>
+    <Member>
+      <Name>AccelerometerZ</Name>
+      <Type>REAL32</Type>
+    </Member>
+    <Member>
+      <Name>GyroscopeX</Name>
+      <Type>REAL32</Type>
+    </Member>
+    <Member>
+      <Name>GyroscopeY</Name>
+      <Type>REAL32</Type>
+    </Member>
+    <Member>
+      <Name>GyroscopeZ</Name>
+      <Type>REAL32</Type>
+    </Member>
+    <Member>
+      <Name>SensorPresent</Name>
+    </Member>
+  </Input>
+  <Input>
+    <Name>IMU1</Name>
+    <Type>RECORD</Type>
+    <Member>
+      <Name>AccelerometerX</Name>
+      <Type>REAL32</Type>
+    </Member>
+    <Member>
+      <Name>AccelerometerY</Name>
+      <Type>REAL32</Type>
+    </Member>
+    <Member>
+      <Name>AccelerometerZ</Name>
+      <Type>REAL32</Type>
+    </Member>
+    <Member>
+      <Name>GyroscopeX</Name>
+      <Type>REAL32</Type>
+    </Member>
+    <Member>
+      <Name>GyroscopeY</Name>
+      <Type>REAL32</Type>
+    </Member>
+    <Member>
+      <Name>GyroscopeZ</Name>
+      <Type>REAL32</Type>
+    </Member>
+    <Member>
+      <Name>SensorPresent</Name>
+    </Member>
+  </Input>
+  <Output>
+    <Name>Digital ouputs</Name>
+    <Type>RECORD</Type>
+    <Member>
+      <Name>LED0</Name>
+    </Member>
+  </Output>
+  <Parameter>
+    <Name>Sensitivity</Name>
+    <Type>RECORD</Type>
+    <Member>
+      <Name>Accelerometer</Name>
+      <Type>INTEGER8</Type>
+    </Member>
+    <Member>
+      <Name>Gyroscope</Name>
+      <Type>INTEGER8</Type>
+    </Member>
+  </Parameter>
+</Slave>
